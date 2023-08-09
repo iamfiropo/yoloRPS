@@ -1,0 +1,62 @@
+.game-state {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.game-state span {
+  margin-right: 10px;
+}
+
+.pick-your-positions, .game-result, .win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win {
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.pick-your-positions h4, .game-result > h4 | span {
+  margin-top: 60px;
+}
+
+.computer,
+.player {
+  margin: 0 10px;
+}
+
+.position-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.position {
+  width: 170px;
+  height: 140px;
+  margin: 0 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.position button {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.play, .clear {
+  border-radius: 20px;
+  font-size: 25px;
+}
