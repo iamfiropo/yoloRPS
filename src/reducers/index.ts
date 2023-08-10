@@ -33,7 +33,7 @@ const reducer = (state: GameState, action: Action): GameState => {
         if (state.playerChoice.includes(computerChoice)) {
           winnings =
             positions.reduce((acc, item) => {
-              acc = acc + state.bets[item];
+              acc += state.bets[item];
               return acc;
             }, 0) * constants.WINNING_RATE.WINNING_RATE_TWO_POSITIONS;
         }

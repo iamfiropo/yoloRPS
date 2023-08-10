@@ -1,22 +1,86 @@
-.game-state {
+h2, h3 {
+  margin: 0;
+}
+
+.container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  place-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.game-state {
+  background-color: #161616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  height: 30px;
 }
 
 .game-state span {
   margin-right: 10px;
 }
 
+.game-state .score-text {
+  text-transform: uppercase;
+  color: #d3b27e;
+  font-weight: 600;
+}
+
+.game-result {
+  display: flex;
+  gap: 2em;
+  top: 12%;
+}
+
+.game-result h1 {
+  font-size: 48px;
+}
+
+.game-result p {
+  color: #d3b27e;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.pick-your-positions {
+  top: 18%;
+}
+
+.pick-your-positions h4 {
+  color: #d3b27e;
+  margin-top: 6rem;
+}
+
 .pick-your-positions, .game-result, .win {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 120px;
+  position: absolute;
 }
 
 .win {
   flex-direction: column;
-  margin-top: 60px;
+  top: 12%;
+}
+
+.win .score-text {
+  color: #d3b27e;
+}
+
+.win h2 {
+  font-size: 54px;
+  color: #16c359;
+}
+
+.win h3 {
+  font-size: 28px;
+  margin-top: 1.5em;
 }
 
 .pick-your-positions h4, .game-result > h4 | span {
@@ -32,6 +96,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+
+.position-row span.position:first-child {
+  background-color: #10109ca8;
+  border: 2px solid rgb(19, 19, 204);
+}
+
+.position-row span.position:first-child h2 {
+  color: blue;
+  margin-top: 1rem;
+}
+
+.position-row span.position:nth-child(2) {
+  background-color: #045d04c2;
+  border: 2px solid rgb(20, 205, 20);
+}
+
+.position-row span.position:nth-child(2) h2 {
+  color: rgb(20, 205, 20);
+  margin-top: 1rem;
+}
+
+.position-row span.position:last-child {
+  background-color: #50091e;
+  border: 2px solid red;
+}
+
+.position-row span.position:last-child h2 {
+  color: #e31542;
+  margin-top: 1rem;
 }
 
 .position {
@@ -43,20 +139,60 @@
 }
 
 .position button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 10px 20px;
   font-size: 16px;
+}
+
+.position button:hover {
+  outline: 0.5px auto #ccc;
+  transition: outline 0.2s ease-in-out;
+}
+
+.position button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.position:not(:last-child) button span {
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid #1666ee;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
 .button-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
 }
 
 .play, .clear {
-  border-radius: 20px;
+  background-color: #161616;
+  border: 2px solid #d3b27e;
+  border-radius: 40px;
+  color: #d3b27e;
   font-size: 25px;
+  padding: 1em 2.5em;
+  text-transform: uppercase;
+}
+
+.play:disabled, .clear:disabled {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 960px) {
+  .pick-your-positions {
+    top: 20%;
+  }
+
+  .game-result, .win {
+    top: 21%;
+  }
 }
